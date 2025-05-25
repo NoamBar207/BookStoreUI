@@ -5,38 +5,40 @@ This project contains a .NET Web API backend and an Angular frontend. The API us
 git clone https://github.com/your-username/bookstore-api.git
 cd bookstore-api
 
-# In another folder/tab, clone frontend
+# Frontend
 git clone https://github.com/your-username/bookstore-ui.git
 cd bookstore-ui
 
-
+#
 ⚙️ Run Backend (.NET API)
 Navigate to the backend folder:
 cd bookstore-api/BookStoreApi
 
-Set the desired environment:
-# Choose one of: Development | Production
+#
+# Set the desired environment: Choose one of: Development | Production
 For Production : 
 At the front Run : ng build --configuration production 
 At the Server run : dotnet watch run --launch-profile "BookStoreApi"
 
+#
 Run the API:
 dotnet run
 Swagger will be available at:
-https://localhost:5001/swagger or http://localhost:5000/swagger
+https://localhost:5013/swagger for development or http://localhost:7071/swagger for production
 
-🌐 Run Frontend (Angular)
+# 🌐 Run Frontend (Angular)
 Navigate to frontend folder:
 
 cd bookstore-ui
 Install dependencies: npm install
 
 Run Angular dev server:
+
 ng serve
 Visit the UI:
 http://localhost:4200
 
-🧪 Environment-Specific Data
+# 🧪 Environment-Specific Data
 The API supports switching XML file storage via environment:
 
 appsettings.Development.json → bookstore.dev.xml
