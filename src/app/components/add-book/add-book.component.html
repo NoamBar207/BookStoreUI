@@ -1,0 +1,32 @@
+<h2>Add New Book</h2>
+
+<div class="form-container">
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <label>Isbn:</label>
+    <input formControlName="isbn" />
+
+    <label>Title:</label>
+    <input formControlName="titleText" />
+
+    <label>Language:</label>
+    <input formControlName="titleLang" />
+
+    <label>Authors (one per line):</label>
+    <textarea formControlName="authors"></textarea>
+
+    <label>Category:</label>
+    <input formControlName="category" />
+
+    <label>Cover:</label>
+    <input formControlName="cover" />
+
+    <label>Year:</label>
+    <input type="number" formControlName="year" />
+
+    <label>Price:</label>
+    <input type="number" formControlName="price" />
+    <div class="actions-container">
+      <button type="submit">Add Book</button>
+    </div>
+  </form>
+</div>

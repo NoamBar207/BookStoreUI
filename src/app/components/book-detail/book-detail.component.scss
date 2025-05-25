@@ -1,0 +1,61 @@
+/* book-detail.component.scss */
+
+.book-detail {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #1e3a8a;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0.75rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+
+    span {
+      font-weight: 600;
+      display: inline-block;
+      min-width: 90px;
+      color: #4b5563;
+    }
+  }
+  ul {
+    margin: 0;
+    padding-inline-start: 1.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    label {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+  }
+}

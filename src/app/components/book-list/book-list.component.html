@@ -1,0 +1,38 @@
+<h2>Book List</h2>
+<div *ngIf="loading">Loading...</div>
+<div class="table-container">
+  <table *ngIf="!loading">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Isbn</th>
+        <th>Authors</th>
+        <th>Category</th>
+        <th>Year</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>
+          <a [routerLink]="['/book', book.isbn]">
+            {{ book.title.text }}
+          </a>
+        </td>
+        <td>
+          {{ book.isbn }}
+        </td>
+        <td>
+          {{ book.authors.join(', ') }}
+        </td>
+        <td>{{ book.category }}</td>
+        <td>{{ book.year }}</td>
+        <td>${{ book.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="actions-container">
+  <button (click)="onAddBook()">Add Book</button>
+  <button (click)="openReportInNewTab()">Open Book Report</button>
+</div>

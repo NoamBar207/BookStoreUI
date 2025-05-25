@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  label {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+}

@@ -1,0 +1,55 @@
+<div *ngIf="loading">Loading Book...</div>
+
+<div *ngIf="!loading && book" class="book-detail">
+  <div *ngIf="!enableEdit" class="book-info">
+    <h2>{{ book.title.text }}</h2>
+    <p><strong>Isbn:</strong> {{ book.isbn }}</p>
+    <p><strong>Language:</strong> {{ book.title.lang }}</p>
+    <p><strong>Authors:</strong></p>
+    <ul>
+      <li *ngFor="let author of book.authors">{{ author }}</li>
+    </ul>
+    <p><strong>Category:</strong> {{ book.category }}</p>
+    <p><strong>Cover:</strong> {{ book.cover }}</p>
+    <p><strong>Year:</strong> {{ book.year }}</p>
+    <p><strong>Price:</strong> ${{ book.price }}</p>
+  </div>
+
+  <div class="form-container" *ngIf="enableEdit">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="form-container">
+      <h2>Edit Book</h2>
+      <label>Title:</label>
+      <input formControlName="titleText" />
+
+      <label>Language:</label>
+      <input formControlName="titleLang" />
+
+      <label>Authors (one per line):</label>
+      <textarea formControlName="authors"></textarea>
+
+      <label>Category:</label>
+      <input formControlName="category" />
+
+      <label>Cover:</label>
+      <input formControlName="cover" />
+
+      <label>Year:</label>
+      <input type="number" formControlName="year" />
+
+      <label>Price:</label>
+      <input type="number" formControlName="price" />
+
+      <div class="actions-container">
+        <button type="submit">Save</button>
+        <button type="button" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="actions-container">
+    <button *ngIf="!enableEdit" (click)="deleteBook()">Delete Book</button>
+    <button *ngIf="!enableEdit" (click)="enableEdit = true">Edit Book</button>
+  </div>
+</div>
+
+<div *ngIf="!loading && !book">Book not found</div>
