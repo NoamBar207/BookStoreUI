@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://bookstore-yukm.onrender.com/'
+  apiUrl: 'https://localhost:7071/'
 };
